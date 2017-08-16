@@ -2,17 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.moodle.moodlemobile"
+        id        = "edu.ptt.moodle"
         versionCode = "20190"
         version   = "3.3.1">
-    <name>Moodle Mobile</name>
+    <name>PTT</name>
 
     <description>
-        Moodle Mobile official app
+        Moodle Application For Philadelphia Technician Training Institute
     </description>
 
-    <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Mobile team
+    <author href="http://www.vibidsoft.com/" email="testvibid@gmail.com">
+        Vibidsoft team
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
