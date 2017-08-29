@@ -22008,8 +22008,8 @@ angular.module('mm.core.sidemenu')
 }]);
 
 angular.module('mm.core.sidemenu')
-.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", "$mmCourses", function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
-            $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu, $mmCourses) {
+.controller('mmSideMenuCtrl', ["$scope", "$state", "$mmSideMenuDelegate", "$mmSitesManager", "$mmSite", "$mmEvents", "$timeout", "mmCoreEventLanguageChanged", "mmCoreEventSiteUpdated", "$mmSideMenu", "$mmCourses","$mmLoginHelper" , function($scope, $state, $mmSideMenuDelegate, $mmSitesManager, $mmSite, $mmEvents,
+            $timeout, mmCoreEventLanguageChanged, mmCoreEventSiteUpdated, $mmSideMenu, $mmCourses , ,$mmLoginHelper) {
     $mmSideMenu.setScope($scope);
     $scope.handlers = $mmSideMenuDelegate.getNavHandlers();
     $scope.areNavHandlersLoaded = $mmSideMenuDelegate.areNavHandlersLoaded;
@@ -22018,6 +22018,11 @@ angular.module('mm.core.sidemenu')
         $mmSitesManager.logout().finally(function() {
             $state.go('mm_login.sites');
         });
+    };
+	$scope.customlogout = function() {
+  $mmSitesManager.deleteSite($mmSite.getId()).then(function() {
+   $mmLoginHelper.goToAddSite();
+  });
     };
     function loadSiteInfo() {
         var config = $mmSite.getStoredConfig();
