@@ -22016,7 +22016,7 @@ angular.module('mm.core.sidemenu')
     loadSiteInfo();
     $scope.logout = function() {
         $mmSitesManager.logout().finally(function() {
-          //  $state.go('mm_login.sites');
+            $state.go('mm_login.sites');
         });
     };
     function loadSiteInfo() {
@@ -65715,7 +65715,7 @@ angular.module('mm.core')
     "languages": {"ar": "عربي", "bg": "Български", "ca": "Català", "cs": "Čeština", "da": "Dansk", "de": "Deutsch", "el": "Ελληνικά", "en": "English", "es": "Español", "es-mx": "Español - México", "eu": "Euskara", "fa": "فارسی", "fr" : "Français", "he" : "עברית", "hu": "magyar", "it": "Italiano", "lt" : "Lietuvių", "ja": "日本語","nl": "Nederlands", "pl": "Polski", "pt-br": "Português - Brasil", "pt": "Português - Portugal", "ro": "Română", "ru": "Русский", "sr-cr": "Српски", "sr-lt": "Srpski", "sv": "Svenska", "tr" : "Türkçe", "uk" : "Українська", "zh-cn" : "简体中文", "zh-tw" : "正體中文"},
     "wsservice" : "moodle_mobile_app",
     "wsextservice" : "local_mobile",
-    "demo_sites": {},
+    "demo_sites": { },
     "gcmpn": "694767596569",
     "customurlscheme": "moodlemobile",
     "siteurl": "http://ptt.edu/weldingclass",
