@@ -22016,7 +22016,7 @@ angular.module('mm.core.sidemenu')
     loadSiteInfo();
     $scope.logout = function() {
         $mmSitesManager.logout().finally(function() {
-            $state.go('mm_login.sites');
+          //  $state.go('mm_login.sites');
         });
     };
     function loadSiteInfo() {
