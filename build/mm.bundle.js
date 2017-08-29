@@ -100,10 +100,10 @@ angular.module('mm.core', ['pascalprecht.translate'])
                         if ($stateParams.siteid && $stateParams.siteid != $mmSite.getId()) {
                             if ($mmAddonManager.hasRemoteAddonsLoaded()) {
                                 $mmApp.storeRedirect($stateParams.siteid, $stateParams.state, $stateParams.params);
-                                 $state.go('mm_login.sites');
+                                $mmSitesManager.logout();
                             } else {
                                 $mmSitesManager.logout().then(function() {
-                                    $state.go('mm_login.sites');
+                                    loadSiteAndGo();
                                 });
                             }
                         } else {
@@ -111,7 +111,7 @@ angular.module('mm.core', ['pascalprecht.translate'])
                         }
                     } else {
                         if ($stateParams.siteid) {
-                             $state.go('mm_login.sites');
+                            loadSiteAndGo();
                         } else {
                             $state.go('mm_login.sites');
                         }
